@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX 1</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <p><b>Start typing a name in the input field below:</b></p>
+    <form>
+    First name: <input type="text" onkeyup="showHint(this.value)">
+    </form>
+    <p>Suggestions: <br><span id="txtHint"></span></p>
+    <script src="ajax.js" charset="utf-8"></script>
+  </body>
+</html>
