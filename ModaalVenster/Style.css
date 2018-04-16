@@ -1,0 +1,34 @@
+body{
+  margin: 0;
+  padding: 1em;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.trigger img{
+  height: 4em;
+}
+
+#modaalAchtergrond{
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+}
+
+#modaalVenster{
+  width: 90vw;
+  justify-self: center;
+  align-self: center;
+  background-color: #fff;
+  padding: 2em;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+#sluitKnop{
+  float: right;
+}
