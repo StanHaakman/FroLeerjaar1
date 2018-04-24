@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <header>
+      <h1>BMI calculator</h1>
+    </header>
+<form id="form">
+  <h3>Gewicht:</h3>
+  <input id="gewicht" value="80">
+  <h3>Lengte in cm:</h3>
+  <input type="text" id="lengte" value="100">
+  <input type="button" id="button" value ="compute BMI">
+  <div id="resultaat"></div>
+</form>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script>
+        let lengte = document.getElementById('lengte');//bind aan JS
+        let gewicht = document.getElementById('gewicht');//bind aan JS
+        let button = document.getElementById('button');//bind aan JS
+        button.addEventListener("click", function(){
+           ajax(gewicht.value, lengte.value);
+         });//call ajax
+    </script>
+
+  </body>
+</html>
