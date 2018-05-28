@@ -1,0 +1,176 @@
+body{
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+nav{
+  background-color: #444;
+  color: #ddd;
+}
+
+.toggle{
+  background: #000;
+  cursor: pointer;
+  padding: 1em;
+  display: block;
+  text-align: right;
+}
+#toggleMenu{
+  display: none;
+}
+#toggleMenu:checked ~ ul a{
+  /* BRENG DE EIGENSCHAPPEN VAN HET MENU TERUG ALS MENU TOGGLE GECHECKT IS*/
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom: 1px solid #eee;
+}
+
+#toggleMenu:checked ~ .toggle .fa-times{
+  display: block;
+}
+
+#toggleMenu:checked ~ .toggle .fa-bars{
+  display: none;
+}
+
+/* verberg .fa-times*/
+.fa-times{
+  display: none;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+nav a{
+  display: block;
+  text-decoration: none;
+  color: #ddd;
+  padding: 1em;
+  /* VERBERG HET MENU */
+  border-bottom: 0 solid #eee;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  transition: all 0.4s cubic-bezier(.27,.55,.65,.87);
+}
+
+nav a:hover{
+  color: #333;
+  background: #fff;
+
+}
+
+.submenu ul{
+  padding-left: 0.5em;
+  border-left: 4px double #fff;
+}
+
+.submenu{
+  position: relative;
+}
+
+
+
+#navbar .submenu li a{
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  border-bottom-width: 0;
+  transition: all 0.3s cubic-bezier(.27,.55,.65,.87);
+}
+
+#navbar .submenu:hover li a{
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom-width: 1px;
+}
+
+.submenu > a{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.submenu > a::after{
+  content: "\f0d7";
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+}
+
+.submenu:hover > a::after{
+  content: "\f150";
+}
+
+main{
+  padding: 1em;
+}
+
+main img{
+  max-width: 100%;
+}
+
+footer{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  color: #ddd;
+  background-color: #444;
+  padding: 1em;
+}
+
+
+#validatie img {
+    height: 1em;
+    width: auto;
+    border: 0;
+    margin: 0 .3em;
+}
+
+/* OPMAAK VOOR BREDERE VIEWPORT */
+@media screen and (min-width: 40em) {
+  nav > ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  }
+
+  /* TOGGLE LABEL VERWIJDEREN */
+  .toggle{
+    display: none;
+  }
+
+  nav a{
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+  }
+
+  .submenu ul{
+    padding-left: 0.5em;
+    border-left: 4px double #fff;
+    position: absolute;
+    border-left: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .submenu a{
+    background-color: #444;
+  }
+
+  /* EEN LIJNTJE LINKS  VAN DE ITEMS VAN HET HOOFDMENU, BEHALVE DE EERSTE */
+  nav > ul > li:not(:first-child) > a{
+    border-left: 4px double #fff;
+  }
+}
